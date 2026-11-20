@@ -4,8 +4,10 @@ An independent planning guide to Microsoft's four-layer Citadel blueprint. Use i
 
 | Download | How to use it |
 | --- | --- |
+| [HTML map for iPad Files (.zip)](https://github.com/MiguelElGallo/Citadel/blob/main/outputs/citadel-first-use-case/Citadel-Service-Map-HTML.zip?raw=true) | In **Files → Downloads**, tap the ZIP to extract it. Open **Citadel-Service-Map.html** from the extracted files. Choose a layer and expand a service to read its details offline. |
+| [iPad service map for Apple Books](https://github.com/MiguelElGallo/Citadel/blob/main/outputs/citadel-first-use-case/Citadel-Service-Map-iPad.epub?raw=true) | Download in Safari. In **Files → Downloads**, touch and hold the EPUB, then tap **Share → Books**. Open **Browse by layer** for the reading view, or use the filters in the interactive map. |
 | [Excel service planner](outputs/citadel-first-use-case/Citadel-Service-Planner.xlsx) | Open **Services**, select a layer, and filter **Pilot stage** to **Start here**. Each of the 134 uses has a purpose, placement, and separate Microsoft Terraform and Bicep findings. |
-| [Offline service map](outputs/citadel-first-use-case/Citadel-Service-Map.html) | Download the HTML file and open it in a browser to explore the same inventory by layer, landing zone, and service. |
+| [Offline HTML service map](outputs/citadel-first-use-case/Citadel-Service-Map.html) | GitHub shows the HTML source. Choose **Download raw file**. Open the saved `.html` in **Files** on iPad to browse by layer and service, or in a desktop browser to use the filters. |
 | [Architecture images and source index](outputs/citadel-first-use-case/Citadel-Architecture-Images.zip) | Includes 11 diagrams. Open `Image-index.csv` to find them by subject and reach the original sources for five additional images and four badges. |
 
 Zone numbers describe specific Microsoft template examples. For a new deployment, check your service tier, region, and configuration. The workbook links to the source for each finding.

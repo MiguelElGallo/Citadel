@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102328" />
+    <meta
+      name="description"
+      content="Sources and reuse terms for Citadel Atlas, the planning data, architecture diagrams, and Azure service icons."
+    />
+    <title>Credits and licenses · Citadel Atlas</title>
+    <link rel="icon" href="assets/citadel.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .credit-body {
+        max-width: 56rem;
+        width: calc(100% - 2.5rem);
+        margin: 3.5rem auto 4rem;
+        color: #17332e;
+      }
+      .credit-body h1 {
+        font-size: clamp(2.4rem, 5vw, 3.9rem);
+        line-height: 1.08;
+        margin: 0 0 1.1rem;
+        letter-spacing: -0.045em;
+      }
+      .credit-body header > p {
+        font-size: 1.12rem;
+      }
+      .credit-body section {
+        margin-top: 2.1rem;
+        padding-top: 1.45rem;
+        border-top: 1px solid #c9d7d2;
+      }
+      .credit-body h2 {
+        font-size: 1.4rem;
+        margin: 0 0 0.75rem;
+      }
+      .credit-body p,
+      .credit-body li {
+        line-height: 1.58;
+        max-width: 75ch;
+      }
+      .credit-body p {
+        margin: 0.55rem 0;
+      }
+      .credit-body li {
+        margin: 0.3rem 0;
+      }
+      .credit-body a {
+        color: #076559;
+        text-decoration: underline;
+        text-underline-offset: 0.15em;
+      }
+      .credit-body details {
+        margin: 1em 0;
+        padding: 0.9rem 1.1rem;
+        border: 1px solid #becfc8;
+        border-radius: 0.6rem;
+      }
+      .credit-body summary {
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .credit-body :focus-visible {
+        outline: 3px solid #327d91;
+        outline-offset: 4px;
+      }
+      @media (max-width: 600px) {
+        .credit-body {
+          margin-block: 2.1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#credits">Skip to credits</a>
+    <header class="topbar">
+      <div class="shell top-inner">
+        <a class="brand" href="./"
+          ><img src="assets/citadel.svg" width="35" height="35" alt="" /><span
+            >Citadel <b>Atlas</b></span
+          ></a
+        >
+        <nav aria-label="Main navigation">
+          <a href="./">Service explorer</a
+          ><a href="./?view=architecture">Architecture</a>
+        </nav>
+        <a
+          class="repo-link"
+          href="https://github.com/MiguelElGallo/Citadel"
+          aria-label="Repository"
+          ><svg
+            width="19"
+            height="19"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M5 5.5A2.5 2.5 0 0 1 7.5 3H19v18H7.5A2.5 2.5 0 0 1 5 18.5zM5 18.5A2.5 2.5 0 0 1 7.5 16H19M9 8h5"
+            /></svg
+          ><span>Repository</span></a
+        >
+      </div>
+    </header>
+    <main id="credits" class="credit-body">
+      <header>
+        <h1>Credits and licenses</h1>
+        <p>
+          Citadel Atlas is an independent guide to Microsoft's four-layer
+          Citadel architecture. Miguel P Z created the explorer, planning notes,
+          and workbook.
+        </p>
+      </header>
+      <section>
+        <h2>Architecture and service data</h2>
+        <p>
+          The service roles and landing zones come from Microsoft's blueprint.
+          The explorer links each service use to its sources. The connection
+          details link to the document or implementation that describes the two
+          endpoints.
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/Azure-Samples/foundry-citadel-platform/tree/89d3d70b13aada1972d2e280e00e5aa49a85ad97"
+              >Microsoft Foundry Citadel Platform</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/tree/ba0674c562099d252680d17222dc004a63019cfc"
+              >Azure Samples AI Hub Gateway Solution Accelerator</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/MiguelElGallo/Citadel/blob/main/THIRD_PARTY_NOTICES.md"
+              >All architecture, Bicep, and Terraform credits</a
+            >
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Diagrams</h2>
+        <p>
+          Microsoft Corporation published these diagrams in Azure AI Landing
+          Zones under the MIT license. The gallery offers smaller previews and
+          full-size originals.
+        </p>
+        <ul>
+          <li>
+            <a
+              href="https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/architecture/media/AI-Landing-Zone.png"
+              >Gateway and agent landing zones</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/architecture/media/AI-Landing-Zones-APIM.png"
+              >API gateway and workload spoke</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/media/runbooks/private-access-vpn.png"
+              >Operator access to private endpoints</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/media/runbooks/foundry-iq.png"
+              >Document retrieval with Foundry IQ</a
+            >
+          </li>
+        </ul>
+        <p>
+          <a
+            href="https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/LICENSE"
+            >Diagram license at the illustrated revision</a
+          >
+        </p>
+      </section>
+      <section>
+        <h2>Azure service icons</h2>
+        <p>
+          Microsoft owns the Azure architecture icons. They appear beside
+          product names to explain connections in the architecture. Microsoft
+          allows their use in architecture diagrams, training, and
+          documentation. Keep the artwork intact and follow Microsoft's terms
+          when reusing it.
+        </p>
+        <p>
+          <a
+            href="https://learn.microsoft.com/en-us/azure/architecture/icons/#icon-terms"
+            >Azure architecture icon terms</a
+          >
+          ·
+          <a
+            href="https://arch-center.azureedge.net/icons/Azure_Public_Service_Icons_V25.zip"
+            >Official service icon collection, version 25</a
+          >
+          ·
+          <a
+            href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks"
+            >Microsoft trademark guidelines</a
+          >
+        </p>
+      </section>
+      <section>
+        <h2>Reusing this work</h2>
+        <p>
+          The explorer, original Citadel Atlas mark, planning notes, and
+          workbook layout are © 2026 Miguel P Z and licensed under MIT. Include
+          the relevant copyright and permission notices when sharing copies.
+          Microsoft and Azure Samples retain copyright in their contributions.
+          Product names and marks belong to their respective owners.
+        </p>
+        <p>
+          <a href="https://github.com/MiguelElGallo/Citadel/blob/main/LICENSE"
+            >Project license</a
+          >
+          ·
+          <a
+            href="https://github.com/MiguelElGallo/Citadel/blob/main/licenses/Microsoft-MIT.txt"
+            >Microsoft license</a
+          >
+          ·
+          <a
+            href="https://github.com/MiguelElGallo/Citadel/blob/main/licenses/Azure-Samples-MIT.txt"
+            >Azure Samples license</a
+          >
+        </p>
+        <details>
+          <summary>Read the MIT license</summary>
+          <p>
+            Original work · Copyright (c) 2026 Miguel P Z.<br />Microsoft
+            architecture and diagrams · Copyright (c) Microsoft Corporation.<br />Gateway
+            source material · Copyright (c) 2024 Azure Samples.
+          </p>
+          <p>
+            Permission is hereby granted, free of charge, to any person
+            obtaining a copy of this software and associated documentation files
+            (the &quot;Software&quot;), to deal in the Software without
+            restriction, including without limitation the rights to use, copy,
+            modify, merge, publish, distribute, sublicense, and/or sell copies
+            of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:
+          </p>
+          <p>
+            The above copyright notice and this permission notice shall be
+            included in all copies or substantial portions of the Software.
+          </p>
+          <p>
+            THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY
+            KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+            WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+            NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+            BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+            ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+            CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+            SOFTWARE.
+          </p>
+        </details>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell">
+        <span class="footer-brand"
+          ><img src="assets/citadel.svg" width="21" height="21" alt="" />Citadel
+          Atlas</span
+        >
+        <nav aria-label="Explore">
+          <a href="./">Service explorer</a
+          ><a href="./?view=architecture">Architecture diagrams</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

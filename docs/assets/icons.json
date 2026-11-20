@@ -1,0 +1,11 @@
+{
+  "Azure API Management": "assets/icons/api-management.svg",
+  "Azure OpenAI": "assets/icons/azure-openai.svg",
+  "Microsoft Foundry": "assets/icons/microsoft-foundry.svg",
+  "Azure Monitor": "assets/icons/azure-monitor.svg",
+  "Azure Key Vault": "assets/icons/key-vault.svg",
+  "Azure AI Search": "assets/icons/ai-search.svg",
+  "Microsoft Foundry Agent Service": "assets/icons/foundry-agent-service.svg",
+  "Microsoft Foundry IQ": "assets/icons/foundry-iq.svg",
+  "Microsoft Foundry control plane": "assets/icons/foundry-control-plane.svg"
+}

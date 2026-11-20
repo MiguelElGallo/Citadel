@@ -1,11 +1,12 @@
-# Citadel service planner
+# Citadel Atlas
 
-An independent planning guide to Microsoft's four-layer Citadel blueprint. Use it to decide which Azure services to reuse, configure, or create for a first agent.
+[Open the service explorer](https://miguelelgallo.github.io/Citadel/) on iPad or desktop. Choose a layer or select **Start here only** to plan a first agent. Open a service use to see its landing zone, documented connections, availability zones, and Microsoft Terraform and Bicep evidence. The **Architecture** view includes four diagrams and a searchable list of connections.
+
+This is an independent guide to Microsoft’s four-layer Citadel blueprint.
 
 | Download | How to use it |
 | --- | --- |
 | [HTML map for iPad Files (.zip)](https://github.com/MiguelElGallo/Citadel/blob/main/outputs/citadel-first-use-case/Citadel-Service-Map-HTML.zip?raw=true) | In **Files → Downloads**, tap the ZIP to extract it. Open **Citadel-Service-Map.html** from the extracted files. Choose a layer and expand a service to read its details offline. |
-| [iPad service map for Apple Books](https://github.com/MiguelElGallo/Citadel/blob/main/outputs/citadel-first-use-case/Citadel-Service-Map-iPad.epub?raw=true) | Download in Safari. In **Files → Downloads**, touch and hold the EPUB, then tap **Share → Books**. Open **Browse by layer** for the reading view, or use the filters in the interactive map. |
 | [Excel service planner](outputs/citadel-first-use-case/Citadel-Service-Planner.xlsx) | Open **Services**, select a layer, and filter **Pilot stage** to **Start here**. Each of the 134 uses has a purpose, placement, and separate Microsoft Terraform and Bicep findings. |
 | [Offline HTML service map](outputs/citadel-first-use-case/Citadel-Service-Map.html) | GitHub shows the HTML source. Choose **Download raw file**. Open the saved `.html` in **Files** on iPad to browse by layer and service, or in a desktop browser to use the filters. |
 | [Architecture images and source index](outputs/citadel-first-use-case/Citadel-Architecture-Images.zip) | Includes 11 diagrams. Open `Image-index.csv` to find them by subject and reach the original sources for five additional images and four badges. |

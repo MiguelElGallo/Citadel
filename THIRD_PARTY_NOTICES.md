@@ -2,7 +2,7 @@
 
 ## Original work
 
-The workbook layout, planning notes, service map, and image index are © 2026 Miguel P Z. The [project MIT license](LICENSE) permits redistribution with its copyright and permission notice. This is an independent guide to Microsoft's published architecture. Microsoft has not endorsed this guide.
+The Citadel Atlas website and its original mark, workbook layout, planning notes, service map, and image index are © 2026 Miguel P Z. The [project MIT license](LICENSE) permits redistribution with its copyright and permission notice. This is an independent guide to Microsoft's published architecture. Microsoft has not endorsed this guide.
 
 ## Architecture and implementation sources
 
@@ -21,6 +21,10 @@ The service inventory adapts the four-layer structure and uses upstream document
 Copies of the upstream license texts are included for offline redistribution. [Microsoft Corporation notice](licenses/Microsoft-MIT.txt) · [2024 Azure Samples notice](licenses/Azure-Samples-MIT.txt)
 
 ## Images and trademarks
+
+The website displays four diagrams from Azure AI Landing Zones, copyright Microsoft Corporation. The full-size PNGs match Microsoft's originals at the linked revision. Gallery previews resize the complete diagrams. The website credits each diagram and links to its original source. [Site credits](docs/credits.html) · [Image sources](docs/assets/diagrams.json) · [Microsoft diagram license](https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/LICENSE)
+
+The files in `docs/assets/icons/` are intact Microsoft Azure architecture icons from version 25 of the official collection. These icons have their own terms. Microsoft permits their use and redistribution in architectural diagrams, training materials, and documentation. The site uses them beside the names of products in architecture diagrams and connection details. The project MIT license applies to the original site code and text. [Microsoft icon terms](https://learn.microsoft.com/en-us/azure/architecture/icons/#icon-terms) · [Official icon collection, version 25](https://arch-center.azureedge.net/icons/Azure_Public_Service_Icons_V25.zip) · [Site icon index](docs/assets/icons.json)
 
 The image ZIP contains intact architecture diagrams for technical documentation. Its `Image-index.csv` records the source, revision, and inclusion status of each image. Keep the index and license files with the diagrams when sharing them. Microsoft permits distribution of its Azure architecture icons in diagrams, documentation, and training. The marks depicted in the diagrams belong to their respective owners. [Azure architecture icon terms](https://learn.microsoft.com/en-us/azure/architecture/icons/#icon-terms) · [Microsoft trademark guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks)
 

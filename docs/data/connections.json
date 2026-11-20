@@ -1,0 +1,1043 @@
+[
+  {
+    "from": "Microsoft Foundry agent",
+    "to": "Azure API Management",
+    "label": "Requests a model through the shared gateway",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L350-L355",
+    "uses": [
+      "l1-azure-api-management-shared-ai-gateway",
+      "l1-azure-api-management-access-and-backend-contracts",
+      "l2-microsoft-foundry-project-and-agent-service",
+      "l2-microsoft-foundry-model-catalog-and-deployment"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Azure OpenAI",
+    "label": "Forwards approved model requests",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/CITADEL-TECHNICAL-GUIDE.md#L25-L36",
+    "uses": [
+      "l1-azure-api-management-shared-ai-gateway",
+      "l1-azure-api-management-routing-quotas-and-failover",
+      "l1-azure-openai-optional-central-model-deployments"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Model backend pool",
+    "label": "Retries or reroutes a request when a backend is unavailable",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L121-L127",
+    "uses": [
+      "l1-azure-api-management-routing-quotas-and-failover",
+      "l1-azure-api-management-access-and-backend-contracts"
+    ]
+  },
+  {
+    "from": "Application team",
+    "to": "Azure API Center",
+    "label": "Looks up approved models, tools and agents",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L161-L172",
+    "uses": [
+      "l1-azure-api-center-registry-of-approved-assets"
+    ]
+  },
+  {
+    "from": "Spoke publish contract",
+    "to": "Azure API Center",
+    "label": "Registers a published tool or agent when catalog registration is enabled",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/README.md#L248-L258",
+    "uses": [
+      "l1-azure-api-center-registry-of-approved-assets",
+      "l1-azure-api-center-publish-contract"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Application Insights",
+    "label": "Sends performance and usage measurements for gateway calls",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L131-L139",
+    "uses": [
+      "l1-azure-api-management-shared-ai-gateway",
+      "l1-azure-monitor-application-insights"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Log Analytics workspace",
+    "label": "Records gateway call telemetry for investigation",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L131-L139",
+    "uses": [
+      "l1-azure-monitor-log-analytics-workspace"
+    ]
+  },
+  {
+    "from": "Calling agent",
+    "to": "Azure API Management",
+    "label": "Presents its identity for gateway access checks",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L350-L356",
+    "uses": [
+      "l1-azure-api-management-access-checks-and-audit-policy",
+      "l1-microsoft-entra-id-gateway-sign-in-and-managed-identities",
+      "l3-microsoft-entra-id-agent-id-blueprint-and-sponsor"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Azure AI Content Safety",
+    "label": "Invokes screening for requests and responses",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L203-L211",
+    "uses": [
+      "l1-azure-api-management-shared-ai-gateway",
+      "l1-azure-api-management-access-checks-and-audit-policy",
+      "l1-azure-ai-content-safety-gateway-screening"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Azure AI Language",
+    "label": "Requests personal information detection when masking is enabled",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/guides/pii-masking-apim.md#L75-L91",
+    "uses": [
+      "l1-azure-api-management-access-checks-and-audit-policy",
+      "l1-azure-ai-language-personal-information-detection"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Microsoft Sentinel",
+    "label": "Streams gateway audit records",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L223-L231",
+    "uses": [
+      "l1-azure-api-management-access-checks-and-audit-policy",
+      "l1-microsoft-sentinel-gateway-audit-integration",
+      "l4-microsoft-sentinel-security-log-collection"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Microsoft Defender",
+    "label": "Provides audit records for threat detection",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L350-L356",
+    "uses": [
+      "l1-azure-api-management-access-checks-and-audit-policy",
+      "l1-microsoft-defender-for-cloud-defender-for-apis"
+    ]
+  },
+  {
+    "from": "Microsoft Purview",
+    "to": "Azure API Management",
+    "label": "Applies the blueprint’s data governance policies at the gateway",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L350-L356",
+    "uses": [
+      "l1-microsoft-purview-gateway-data-governance-integration"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Azure Event Hubs",
+    "label": "Emits optional usage events for calls other than language models",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/guides/platform-observability-guide.md#L257-L263",
+    "uses": [
+      "l1-azure-event-hubs-usage-events"
+    ]
+  },
+  {
+    "from": "Azure Event Hubs",
+    "to": "Azure Logic Apps",
+    "label": "Supplies optional non-model usage events for processing",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/guides/platform-observability-guide.md#L257-L263",
+    "uses": [
+      "l1-azure-event-hubs-usage-events",
+      "l1-azure-logic-apps-usage-processing-workflow"
+    ]
+  },
+  {
+    "from": "Azure Logic Apps",
+    "to": "Application Insights",
+    "label": "Reads language-model usage measurements on a schedule",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/guides/platform-observability-guide.md#L257-L263",
+    "uses": [
+      "l1-azure-monitor-application-insights",
+      "l1-azure-logic-apps-usage-processing-workflow"
+    ]
+  },
+  {
+    "from": "Azure Logic Apps",
+    "to": "Azure Cosmos DB",
+    "label": "Writes usage records for cost reporting",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/guides/platform-observability-guide.md#L257-L265",
+    "uses": [
+      "l1-azure-cosmos-db-gateway-usage-database",
+      "l1-azure-logic-apps-usage-processing-workflow"
+    ]
+  },
+  {
+    "from": "Azure Logic Apps",
+    "to": "Azure Storage",
+    "label": "Uses the storage account for the gateway workflow",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/bicep/infra/resources.bicep#L1100-L1108",
+    "uses": [
+      "l1-azure-logic-apps-usage-processing-workflow",
+      "l1-azure-storage-workflow-storage-account"
+    ]
+  },
+  {
+    "from": "Azure Cosmos DB",
+    "to": "Microsoft Power BI",
+    "label": "Supplies usage and pricing records for cost reports",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/guides/platform-observability-guide.md#L243-L265",
+    "uses": [
+      "l1-azure-cosmos-db-gateway-usage-database",
+      "l1-microsoft-power-bi-cost-and-usage-reports"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Azure Managed Redis",
+    "label": "Uses the optional external cache",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/bicep/infra/modules/apim/apim.bicep#L390-L398",
+    "uses": [
+      "l1-azure-managed-redis-optional-gateway-cache"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Azure AI Document Intelligence",
+    "label": "Exposes the document analysis API when enabled",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/bicep/infra/modules/apim/apim.bicep#L313-L335",
+    "uses": [
+      "l1-azure-ai-document-intelligence-gateway-for-document-extraction"
+    ]
+  },
+  {
+    "from": "Azure Front Door",
+    "to": "Regional API Management gateway",
+    "label": "Forwards web requests to a healthy regional gateway",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/guides/business-continuity-dr-guide.md#L194-L209",
+    "uses": [
+      "l1-azure-front-door-regional-gateway-failover-option"
+    ]
+  },
+  {
+    "from": "DNS client",
+    "to": "Azure Traffic Manager",
+    "label": "Resolves the available regional gateway through DNS failover",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/guides/business-continuity-dr-guide.md#L194-L211",
+    "uses": [
+      "l1-azure-traffic-manager-regional-gateway-failover-option"
+    ]
+  },
+  {
+    "from": "Self-hosted API Management gateway",
+    "to": "Local model backend",
+    "label": "Keeps data traffic near locally hosted models",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L270-L286",
+    "uses": [
+      "l1-azure-api-management-self-hosted-gateway"
+    ]
+  },
+  {
+    "from": "Existing agent",
+    "to": "Azure Key Vault",
+    "label": "Looks up gateway credentials when the team uses the recommended vault option",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/README.md#L176-L181",
+    "uses": [
+      "l1-azure-key-vault-gateway-credentials"
+    ]
+  },
+  {
+    "from": "Agent spoke",
+    "to": "Governance hub",
+    "label": "Connects to the hub for shared governance and monitoring",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-1-governance-hub.md#L337-L345",
+    "uses": [
+      "l1-azure-virtual-network-hub-network-and-subnets",
+      "l2-azure-virtual-network-spoke-network-and-subnets"
+    ]
+  },
+  {
+    "from": "Azure Logic Apps private endpoint",
+    "to": "Hub virtual network",
+    "label": "Uses the selected hub subnet when private access is enabled",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/bicep/infra/resources.bicep#L1127-L1132",
+    "uses": [
+      "l1-azure-virtual-network-hub-network-and-subnets",
+      "l1-azure-private-link-hub-private-endpoints"
+    ]
+  },
+  {
+    "from": "Azure Container Apps agent",
+    "to": "Application Insights",
+    "label": "Exports traces when instrumented with OpenTelemetry",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L157-L175",
+    "uses": [
+      "l2-microsoft-foundry-foundry-control-plane-for-existing-agents",
+      "l2-azure-monitor-application-insights-for-existing-agents",
+      "l2-opentelemetry-agent-trace-instrumentation",
+      "l2-azure-container-apps-workload-containers-and-agent-hosting"
+    ]
+  },
+  {
+    "from": "Azure Kubernetes Service agent",
+    "to": "Application Insights",
+    "label": "Exports traces when instrumented with OpenTelemetry",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L157-L175",
+    "uses": [
+      "l2-microsoft-foundry-foundry-control-plane-for-existing-agents",
+      "l2-azure-monitor-application-insights-for-existing-agents",
+      "l2-opentelemetry-agent-trace-instrumentation",
+      "l2-azure-kubernetes-service-existing-or-alternative-kubernetes-runtime"
+    ]
+  },
+  {
+    "from": "Application Insights",
+    "to": "Microsoft Foundry",
+    "label": "Makes traces available for evaluations and quality monitoring",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L157-L175",
+    "uses": [
+      "l2-azure-monitor-application-insights-for-workload-traces",
+      "l2-microsoft-foundry-agent-evaluations",
+      "l2-microsoft-foundry-foundry-control-plane-for-existing-agents",
+      "l2-azure-monitor-application-insights-for-existing-agents"
+    ]
+  },
+  {
+    "from": "Microsoft Foundry agent",
+    "to": "Application Insights",
+    "label": "Records traces from the hosted runtime",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L126-L138",
+    "uses": [
+      "l2-microsoft-foundry-project-and-agent-service",
+      "l2-azure-monitor-application-insights-for-workload-traces",
+      "l2-microsoft-foundry-hosted-agents"
+    ]
+  },
+  {
+    "from": "Azure Monitor",
+    "to": "Azure Monitor Workbooks",
+    "label": "Supplies telemetry for dashboard views",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L338-L346",
+    "uses": [
+      "l2-azure-monitor-workbooks"
+    ]
+  },
+  {
+    "from": "Azure Monitor",
+    "to": "Grafana",
+    "label": "Supplies telemetry for dashboard views",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L338-L346",
+    "uses": [
+      "l2-grafana-agent-monitoring-dashboards"
+    ]
+  },
+  {
+    "from": "Operations team",
+    "to": "Log Analytics workspace",
+    "label": "Queries agent telemetry to diagnose problems",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L338-L346",
+    "uses": [
+      "l2-azure-monitor-log-analytics-workspace-and-alerts"
+    ]
+  },
+  {
+    "from": "Microsoft Foundry agent",
+    "to": "Microsoft Foundry IQ",
+    "label": "Retrieves knowledge for the agent’s answer",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L128-L139",
+    "uses": [
+      "l2-microsoft-foundry-project-and-agent-service",
+      "l2-microsoft-foundry-foundry-iq"
+    ]
+  },
+  {
+    "from": "Work IQ",
+    "to": "Agent workload",
+    "label": "Provides information from the user’s work context",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L228-L232",
+    "uses": [
+      "l2-microsoft-365-copilot-work-iq"
+    ]
+  },
+  {
+    "from": "Fabric IQ",
+    "to": "Agent workload",
+    "label": "Provides business context from shared data models",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L228-L232",
+    "uses": [
+      "l2-microsoft-fabric-fabric-iq"
+    ]
+  },
+  {
+    "from": "Microsoft Foundry agent",
+    "to": "Microsoft Teams",
+    "label": "Publishes the agent for use in Teams",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L128-L139",
+    "uses": [
+      "l2-microsoft-foundry-project-and-agent-service",
+      "l2-microsoft-teams-agent-publishing-channel"
+    ]
+  },
+  {
+    "from": "Microsoft Copilot Studio agent",
+    "to": "Azure API Management",
+    "label": "Uses an access contract to reach governed models or tools",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L261-L264",
+    "uses": [
+      "l1-azure-api-management-shared-ai-gateway",
+      "l1-azure-api-management-access-and-backend-contracts",
+      "l2-microsoft-copilot-studio-low-code-agent"
+    ]
+  },
+  {
+    "from": "GitHub Actions",
+    "to": "Microsoft Foundry evaluations",
+    "label": "Runs automatic evaluations in a GitHub workflow",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L385-L394",
+    "uses": [
+      "l2-microsoft-foundry-agent-evaluations",
+      "l2-github-actions-azure-ai-agent-evaluation-action"
+    ]
+  },
+  {
+    "from": "Azure Pipelines",
+    "to": "Microsoft Foundry evaluations",
+    "label": "Runs batch evaluations in an Azure DevOps pipeline",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L385-L394",
+    "uses": [
+      "l2-microsoft-foundry-agent-evaluations",
+      "l2-azure-devops-azure-pipelines-evaluation-integration"
+    ]
+  },
+  {
+    "from": "Agent application",
+    "to": "Azure AI Search",
+    "label": "Queries its configured application search index",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/agent-landing-zone/agent-tools.md#L87-L100",
+    "uses": [
+      "l2-azure-ai-search-application-search-index"
+    ]
+  },
+  {
+    "from": "Agent application",
+    "to": "Azure Cosmos DB",
+    "label": "Stores application conversation history or agent state",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/AI-Landing-Zones-Design-ACA.md#L58-L66",
+    "uses": [
+      "l2-azure-cosmos-db-application-data-and-conversation-records"
+    ]
+  },
+  {
+    "from": "Microsoft Foundry Agent Service",
+    "to": "Azure AI Search",
+    "label": "Uses dedicated or explicitly reused backing search for the standard setup",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/agent-landing-zone/configuration.md#L1077-L1091",
+    "uses": [
+      "l2-azure-ai-search-standard-agent-service-backing-resource"
+    ]
+  },
+  {
+    "from": "Microsoft Foundry Agent Service",
+    "to": "Azure Storage",
+    "label": "Uses dedicated or explicitly reused backing storage for the standard setup",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/agent-landing-zone/configuration.md#L1077-L1091",
+    "uses": [
+      "l2-azure-storage-standard-agent-service-backing-resource"
+    ]
+  },
+  {
+    "from": "Microsoft Foundry Agent Service",
+    "to": "Azure Cosmos DB",
+    "label": "Uses a dedicated or explicitly reused backing database for the standard setup",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/agent-landing-zone/configuration.md#L1077-L1091",
+    "uses": [
+      "l2-azure-cosmos-db-standard-agent-service-backing-resource"
+    ]
+  },
+  {
+    "from": "Azure Container Apps",
+    "to": "Azure Container Registry",
+    "label": "Pulls private images with a managed identity",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/AI-Landing-Zones-Design-ACA.md#L47-L50",
+    "uses": [
+      "l2-microsoft-entra-id-managed-identities-and-agent-identity",
+      "l2-azure-container-apps-workload-containers-and-agent-hosting",
+      "l2-azure-container-registry-private-container-images"
+    ]
+  },
+  {
+    "from": "Azure Container Apps",
+    "to": "Azure Key Vault",
+    "label": "References stored secrets and certificates",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/AI-Landing-Zones-Design-ACA.md#L47-L50",
+    "uses": [
+      "l2-azure-container-apps-workload-containers-and-agent-hosting",
+      "l2-azure-key-vault-workload-secrets-and-certificates"
+    ]
+  },
+  {
+    "from": "Azure Container Apps",
+    "to": "Azure Firewall",
+    "label": "Sends outbound traffic for inspection in the firewall design",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/AI-Landing-Zones-Design-ACA.md#L39-L45",
+    "uses": [
+      "l2-azure-container-apps-workload-containers-and-agent-hosting",
+      "l2-azure-firewall-outbound-traffic-inspection"
+    ]
+  },
+  {
+    "from": "Azure Container Apps",
+    "to": "Azure NAT Gateway",
+    "label": "Uses a static outbound IP in the alternative network design",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/AI-Landing-Zones-Design-ACA.md#L39-L45",
+    "uses": [
+      "l2-azure-container-apps-workload-containers-and-agent-hosting",
+      "l2-azure-nat-gateway-outbound-internet-connection"
+    ]
+  },
+  {
+    "from": "Azure Container Apps workload",
+    "to": "Azure App Configuration",
+    "label": "Reads centrally managed application settings",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/AI-Landing-Zones-Design-ACA.md#L58-L67",
+    "uses": [
+      "l2-azure-app-configuration-settings-and-controlled-releases"
+    ]
+  },
+  {
+    "from": "Azure Bastion",
+    "to": "Jump virtual machine",
+    "label": "Provides private administration access",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/CITADEL-TECHNICAL-GUIDE.md#L380-L384",
+    "uses": [
+      "l2-azure-virtual-machines-jump-vm",
+      "l2-azure-bastion-private-vm-administration",
+      "l2-azure-virtual-machines-portal-jump-vm-zone-example"
+    ]
+  },
+  {
+    "from": "Azure Container Apps worker",
+    "to": "Azure Durable Task Scheduler",
+    "label": "Connects to the task hub for durable workflow execution",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/agent-landing-zone/configuration.md#L1195-L1204",
+    "uses": [
+      "l2-azure-durable-task-scheduler-long-running-workflow-scheduler"
+    ]
+  },
+  {
+    "from": "Workload API Management gateway",
+    "to": "Model endpoints",
+    "label": "Routes and balances requests across backends in the container app design",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/AI-Landing-Zones-Design-ACA.md#L73-L77",
+    "uses": [
+      "l2-azure-api-management-workload-api-gateway"
+    ]
+  },
+  {
+    "from": "Microsoft Foundry",
+    "to": "Microsoft Entra ID",
+    "label": "Uses a project identity during development and a distinct identity for a published agent",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L437-L441",
+    "uses": [
+      "l2-microsoft-entra-id-managed-identities-and-agent-identity",
+      "l3-microsoft-entra-id-agent-id-blueprint-and-sponsor",
+      "l3-microsoft-foundry-published-agent-identity"
+    ]
+  },
+  {
+    "from": "Microsoft Copilot Studio",
+    "to": "Microsoft Entra ID",
+    "label": "Uses an agent identity blueprint when the integration is enabled",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L437-L441",
+    "uses": [
+      "l3-microsoft-entra-id-agent-id-blueprint-and-sponsor",
+      "l3-microsoft-copilot-studio-agent-identity-registration"
+    ]
+  },
+  {
+    "from": "Microsoft Foundry",
+    "to": "Microsoft Agent 365",
+    "label": "Registers agents from the managed Foundry runtime",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L37-L44",
+    "uses": [
+      "l3-microsoft-agent-365-agent-registry",
+      "l3-microsoft-foundry-published-agent-identity"
+    ]
+  },
+  {
+    "from": "Microsoft 365 Copilot",
+    "to": "Microsoft Agent 365",
+    "label": "Supplies native agent registry entries",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L37-L44",
+    "uses": [
+      "l3-microsoft-agent-365-agent-registry",
+      "l3-microsoft-365-copilot-agents-published-to-microsoft-365"
+    ]
+  },
+  {
+    "from": "Microsoft Security Copilot",
+    "to": "Microsoft Agent 365",
+    "label": "Supplies agents to the registry",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L308-L318",
+    "uses": [
+      "l3-microsoft-agent-365-agent-registry",
+      "l3-microsoft-security-copilot-source-of-agents-for-the-registry"
+    ]
+  },
+  {
+    "from": "Agent administrator",
+    "to": "Microsoft Agent 365",
+    "label": "Reviews publishing requests and grants access to selected users",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L170-L179",
+    "uses": [
+      "l3-microsoft-agent-365-publishing-and-access-settings"
+    ]
+  },
+  {
+    "from": "Non-Microsoft agent",
+    "to": "Microsoft Agent 365",
+    "label": "Registers through the Agent 365 SDK",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L487-L501",
+    "uses": [
+      "l3-microsoft-agent-365-agent-registry",
+      "l3-microsoft-agent-365-agent-365-sdk"
+    ]
+  },
+  {
+    "from": "Microsoft Agent 365 SDK",
+    "to": "Microsoft Entra ID",
+    "label": "Requests an access token for a tool call",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L322-L340",
+    "uses": [
+      "l3-microsoft-entra-id-agent-id-blueprint-and-sponsor",
+      "l3-microsoft-agent-365-agent-365-sdk"
+    ]
+  },
+  {
+    "from": "Agent sign-in",
+    "to": "Microsoft Entra sign-in logs",
+    "label": "Records agent activity alongside other identities",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L276-L281",
+    "uses": [
+      "l3-microsoft-entra-id-agent-sign-in-and-audit-logs"
+    ]
+  },
+  {
+    "from": "Microsoft Entra ID Protection",
+    "to": "Microsoft Entra Conditional Access",
+    "label": "Supplies agent risk signals for access decisions",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L213-L223",
+    "uses": [
+      "l3-microsoft-entra-id-conditional-access",
+      "l3-microsoft-entra-id-protection-agent-risk-signals",
+      "l4-microsoft-entra-id-agent-id-and-conditional-access",
+      "l4-microsoft-entra-id-protection-risky-agent-detection"
+    ]
+  },
+  {
+    "from": "Microsoft Copilot Studio agent",
+    "to": "Microsoft Entra Global Secure Access",
+    "label": "Checks outbound browsing traffic against web filtering policies",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L228-L235",
+    "uses": [
+      "l3-microsoft-entra-global-secure-access-copilot-studio-web-access",
+      "l4-microsoft-entra-global-secure-access-agent-web-filtering"
+    ]
+  },
+  {
+    "from": "Microsoft Intune",
+    "to": "Local Windows agents",
+    "label": "Applies device-side controls to local agents",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L408-L418",
+    "uses": [
+      "l3-microsoft-intune-windows-endpoint-controls"
+    ]
+  },
+  {
+    "from": "Microsoft 365",
+    "to": "Microsoft Defender XDR",
+    "label": "Connects the Microsoft 365 source for agent security monitoring",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L422-L431",
+    "uses": [
+      "l3-microsoft-defender-xdr-microsoft-365-connector",
+      "l4-microsoft-defender-xdr-agent-security-and-investigation"
+    ]
+  },
+  {
+    "from": "Microsoft Purview",
+    "to": "Microsoft Agent 365",
+    "label": "Provides data-governance insights for the agent dashboard",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L437-L441",
+    "uses": [
+      "l3-microsoft-purview-audit-and-classification-for-agent-365",
+      "l3-microsoft-agent-365-agent-map-and-usage"
+    ]
+  },
+  {
+    "from": "Microsoft Defender",
+    "to": "Microsoft Agent 365",
+    "label": "Provides agent threat and inventory context for the dashboard",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L437-L441",
+    "uses": [
+      "l3-microsoft-agent-365-agent-map-and-usage",
+      "l4-microsoft-defender-xdr-agent-security-and-investigation"
+    ]
+  },
+  {
+    "from": "Microsoft Entra ID",
+    "to": "Microsoft Agent 365",
+    "label": "Provides identity and access information for the agent dashboard",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L437-L441",
+    "uses": [
+      "l3-microsoft-entra-id-agent-id-blueprint-and-sponsor",
+      "l3-microsoft-agent-365-agent-map-and-usage"
+    ]
+  },
+  {
+    "from": "Microsoft Foundry guardrails",
+    "to": "Microsoft Defender for Cloud",
+    "label": "Sends content-filter detections and application context",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L162-L175",
+    "uses": [
+      "l2-microsoft-foundry-agent-guardrails-and-content-filters",
+      "l4-microsoft-defender-for-cloud-threat-protection-for-ai-services",
+      "l4-microsoft-foundry-guardrail-alerts-to-defender"
+    ]
+  },
+  {
+    "from": "Microsoft Defender for Cloud",
+    "to": "Microsoft Defender XDR",
+    "label": "Supplies security alerts for incident correlation",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L162-L175",
+    "uses": [
+      "l4-microsoft-defender-for-cloud-threat-protection-for-ai-services",
+      "l4-microsoft-defender-xdr-agent-security-and-investigation"
+    ]
+  },
+  {
+    "from": "Microsoft Foundry",
+    "to": "Microsoft Sentinel",
+    "label": "Supplies agent traces to the security monitoring system",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L269-L275",
+    "uses": [
+      "l4-microsoft-sentinel-security-log-collection"
+    ]
+  },
+  {
+    "from": "Microsoft Defender for Cloud",
+    "to": "Microsoft Foundry control plane",
+    "label": "Surfaces security findings to the agent developer",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L386-L392",
+    "uses": [
+      "l2-microsoft-foundry-foundry-control-plane-for-existing-agents",
+      "l4-microsoft-defender-for-cloud-ai-security-posture"
+    ]
+  },
+  {
+    "from": "Microsoft Purview",
+    "to": "Microsoft Foundry control plane",
+    "label": "Surfaces compliance insights to the agent developer",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L386-L392",
+    "uses": [
+      "l2-microsoft-foundry-foundry-control-plane-for-existing-agents",
+      "l4-microsoft-purview-data-security-posture-management"
+    ]
+  },
+  {
+    "from": "Microsoft Purview",
+    "to": "Microsoft Defender portal",
+    "label": "Shows data-loss detections and alerts alongside security incidents",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L276-L288",
+    "uses": [
+      "l4-microsoft-defender-xdr-agent-security-and-investigation",
+      "l4-microsoft-purview-data-loss-prevention"
+    ]
+  },
+  {
+    "from": "Microsoft Defender for Cloud",
+    "to": "Azure Machine Learning",
+    "label": "Discovers AI assets for its security inventory",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L89-L99",
+    "uses": [
+      "l4-microsoft-defender-for-cloud-ai-security-posture",
+      "l4-azure-machine-learning-existing-workload-covered-by-defender"
+    ]
+  },
+  {
+    "from": "Microsoft 365 Copilot interactions",
+    "to": "Microsoft Purview Audit",
+    "label": "Records prompts and responses for audit",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L202-L210",
+    "uses": [
+      "l3-microsoft-purview-audit-and-classification-for-agent-365",
+      "l4-microsoft-purview-audit"
+    ]
+  },
+  {
+    "from": "Labeled reference documents",
+    "to": "Microsoft 365 Copilot",
+    "label": "Pass their most restrictive sensitivity label to the conversation",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L212-L220",
+    "uses": [
+      "l4-microsoft-purview-information-protection-labels"
+    ]
+  },
+  {
+    "from": "Microsoft Purview Data Loss Prevention",
+    "to": "Microsoft 365 agents",
+    "label": "Blocks file processing according to the document sensitivity label",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L216-L223",
+    "uses": [
+      "l4-microsoft-purview-data-loss-prevention"
+    ]
+  },
+  {
+    "from": "Microsoft 365 Copilot interactions",
+    "to": "Microsoft Purview Insider Risk Management",
+    "label": "Contributes activity for the risky-AI-usage policy",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L216-L238",
+    "uses": [
+      "l4-microsoft-purview-insider-risk-management"
+    ]
+  },
+  {
+    "from": "Microsoft 365 Copilot interactions",
+    "to": "Microsoft Purview Communication Compliance",
+    "label": "Checks prompts and responses for policy violations",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L219-L238",
+    "uses": [
+      "l4-microsoft-purview-communication-compliance"
+    ]
+  },
+  {
+    "from": "Microsoft Purview retention policy",
+    "to": "Microsoft 365 Copilot interactions",
+    "label": "Retains or deletes records under the configured policy",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L227-L238",
+    "uses": [
+      "l4-microsoft-purview-data-lifecycle-management"
+    ]
+  },
+  {
+    "from": "Microsoft 365 Copilot interactions",
+    "to": "Microsoft Purview eDiscovery",
+    "label": "Supplies records for preservation, review and export in a case",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L227-L238",
+    "uses": [
+      "l4-microsoft-purview-ediscovery"
+    ]
+  },
+  {
+    "from": "Custom AI application",
+    "to": "Microsoft Purview",
+    "label": "Integrates data controls using the SDK or APIs after Entra registration",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L219-L224",
+    "uses": [
+      "l4-microsoft-purview-developer-apis-for-custom-ai-apps"
+    ]
+  },
+  {
+    "from": "Microsoft Entra Lifecycle Workflows",
+    "to": "Agent identity",
+    "label": "Revokes access after a configured lifecycle or risk event",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-4-security-foundation.md#L253-L263",
+    "uses": [
+      "l3-microsoft-entra-id-governance-sponsor-changes-and-access-reviews",
+      "l4-microsoft-entra-id-governance-lifecycle-workflows"
+    ]
+  },
+  {
+    "from": "Agent outputs",
+    "to": "Microsoft Foundry evaluations",
+    "label": "Provides samples for platform-level quality and safety evaluations",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/CITADEL-TECHNICAL-GUIDE.md#L108-L119",
+    "uses": [
+      "l1-microsoft-foundry-platform-evaluations"
+    ]
+  },
+  {
+    "from": "Azure API Management",
+    "to": "Azure AI Search",
+    "label": "Routes to a configured shared search endpoint",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/bicep/infra/modules/apim/apim.bicep#L659-L671",
+    "uses": [
+      "l1-azure-ai-search-central-search-backend"
+    ]
+  },
+  {
+    "from": "Developer device",
+    "to": "Azure VPN Gateway",
+    "label": "Uses the optional point-to-site connection to reach the private hub",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/bicep/infra/developer-vpn/README.md#L3-L21",
+    "uses": [
+      "l1-azure-virtual-network-hub-network-and-subnets",
+      "l1-azure-vpn-gateway-developer-access-to-a-private-hub"
+    ]
+  },
+  {
+    "from": "Developer VPN hub",
+    "to": "Azure private DNS zones",
+    "label": "Links existing private zones for name resolution when configured",
+    "source": "https://github.com/Azure-Samples/ai-hub-gateway-solution-accelerator/blob/ba0674c562099d252680d17222dc004a63019cfc/bicep/infra/developer-vpn/README.md#L16-L29",
+    "uses": [
+      "l1-azure-dns-private-dns-zones",
+      "l1-azure-vpn-gateway-developer-access-to-a-private-hub"
+    ]
+  },
+  {
+    "from": "Foundry red teaming agent",
+    "to": "Model or application endpoint",
+    "label": "Runs safety tests and scores the responses",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-2-agent-operations.md#L449-L461",
+    "uses": [
+      "l2-microsoft-foundry-ai-red-teaming-agent"
+    ]
+  },
+  {
+    "from": "Azure Blob Storage",
+    "to": "Microsoft Foundry IQ",
+    "label": "Supplies documents for ingestion when a native Blob source is configured",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/agent-landing-zone/application.md#L91-L100",
+    "uses": [
+      "l2-microsoft-foundry-foundry-iq",
+      "l2-azure-storage-application-blob-storage"
+    ]
+  },
+  {
+    "from": "Container app managed identity",
+    "to": "Microsoft Foundry project",
+    "label": "Receives the agent consumer role when the template configuration requests it",
+    "source": "https://github.com/Azure/agent-landing-zone/blob/770119d614ec8ed23dd2784ecf25889eb05e3412/infra/bicep/main.bicep#L3928-L3941",
+    "uses": [
+      "l2-microsoft-entra-id-managed-identities-and-agent-identity",
+      "l2-azure-role-based-access-control-resource-permissions",
+      "l2-azure-container-apps-workload-containers-and-agent-hosting"
+    ]
+  },
+  {
+    "from": "Network security group",
+    "to": "Spoke subnet",
+    "label": "Controls traffic at the service tier’s subnet boundary",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/CITADEL-TECHNICAL-GUIDE.md#L397-L400",
+    "uses": [
+      "l2-azure-virtual-network-spoke-network-and-subnets",
+      "l2-azure-virtual-network-network-security-groups"
+    ]
+  },
+  {
+    "from": "Spoke virtual network",
+    "to": "Azure private DNS zones",
+    "label": "Links the workload network to the private zones for name resolution",
+    "source": "https://github.com/Azure/agent-landing-zone/blob/770119d614ec8ed23dd2784ecf25889eb05e3412/infra/bicep/main.bicep#L2385-L2397",
+    "uses": [
+      "l2-azure-virtual-network-spoke-network-and-subnets",
+      "l2-azure-dns-private-dns-zones"
+    ]
+  },
+  {
+    "from": "Spoke private endpoint",
+    "to": "Azure Blob Storage",
+    "label": "Connects privately to the application storage account’s Blob service",
+    "source": "https://github.com/Azure/agent-landing-zone/blob/770119d614ec8ed23dd2784ecf25889eb05e3412/infra/bicep/main.bicep#L2476-L2490",
+    "uses": [
+      "l2-azure-storage-application-blob-storage",
+      "l2-azure-private-link-spoke-private-endpoints"
+    ]
+  },
+  {
+    "from": "Spoke private endpoint",
+    "to": "Azure AI Speech",
+    "label": "Connects to the speech account when private networking is configured",
+    "source": "https://github.com/Azure/agent-landing-zone/blob/770119d614ec8ed23dd2784ecf25889eb05e3412/infra/bicep/main.bicep#L2583-L2596",
+    "uses": [
+      "l2-azure-private-link-spoke-private-endpoints",
+      "l2-azure-ai-speech-speech-input-or-output"
+    ]
+  },
+  {
+    "from": "Public IP address",
+    "to": "Azure Application Gateway",
+    "label": "Provides the address for the public front end in the ingress template",
+    "source": "https://github.com/Azure/agent-landing-zone/blob/770119d614ec8ed23dd2784ecf25889eb05e3412/infra/bicep/modules/networking/public-ingress.bicep#L345-L363",
+    "uses": [
+      "l2-azure-application-gateway-protected-web-entrance",
+      "l2-azure-public-ip-addresses-public-gateway-address"
+    ]
+  },
+  {
+    "from": "Spoke workload subnet",
+    "to": "Azure Firewall",
+    "label": "Sends egress to the firewall when the portal example enables the default route",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/67804f9851afd40c7f79eaad10e5df6738e75d44/bicep/infra/main.bicep#L3110-L3134",
+    "uses": [
+      "l2-azure-firewall-outbound-traffic-inspection",
+      "l2-azure-firewall-portal-deployment-zone-example"
+    ]
+  },
+  {
+    "from": "Build virtual machine",
+    "to": "Spoke subnet",
+    "label": "Attaches the portal example’s build machine to its selected subnet",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/67804f9851afd40c7f79eaad10e5df6738e75d44/bicep/infra/main.bicep#L3348-L3369",
+    "uses": [
+      "l2-azure-virtual-network-spoke-network-and-subnets",
+      "l2-azure-virtual-machines-build-vm",
+      "l2-azure-virtual-machines-portal-build-vm-zone-example"
+    ]
+  },
+  {
+    "from": "Agent’s SQL query tool",
+    "to": "Azure SQL Database",
+    "label": "Runs validated read-only queries against an approved source",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/agent-landing-zone/agent-app-mcp.md#L211-L220",
+    "uses": [
+      "l2-azure-sql-database-approved-relational-data-source"
+    ]
+  },
+  {
+    "from": "Microsoft Foundry project",
+    "to": "Grounding with Bing Search",
+    "label": "Creates the optional connection for web search",
+    "source": "https://github.com/Azure/agent-landing-zone/blob/770119d614ec8ed23dd2784ecf25889eb05e3412/infra/bicep/main.bicep#L2887-L2899",
+    "uses": [
+      "l2-grounding-with-bing-search-public-web-search"
+    ]
+  },
+  {
+    "from": "Container app workload",
+    "to": "Azure Database for PostgreSQL",
+    "label": "Uses a fixed outbound address for the optional database in the Basic design",
+    "source": "https://github.com/Azure/agent-landing-zone/blob/770119d614ec8ed23dd2784ecf25889eb05e3412/docs/adr/ADR-0039-optional-application-postgresql.md#L44-L61",
+    "uses": [
+      "l2-azure-nat-gateway-outbound-internet-connection",
+      "l2-azure-database-for-postgresql-application-database-option"
+    ]
+  },
+  {
+    "from": "Custom-hosted agent",
+    "to": "Microsoft Agent 365 SDK",
+    "label": "Registers a self-hosted agent using workload identity",
+    "source": "https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/layer-3-agent-management.md#L39-L44",
+    "uses": [
+      "l3-microsoft-entra-workload-id-workload-identity-federation",
+      "l3-microsoft-agent-365-agent-365-sdk"
+    ]
+  },
+  {
+    "from": "Microsoft Defender for Storage",
+    "to": "Azure Storage",
+    "label": "Scans uploads when the example enables malware scanning",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/67804f9851afd40c7f79eaad10e5df6738e75d44/bicep/infra/components/defender/main.bicep#L17-L37",
+    "uses": [
+      "l4-microsoft-defender-for-cloud-defender-for-storage"
+    ]
+  },
+  {
+    "from": "Microsoft Defender for Cloud",
+    "to": "Azure Key Vault",
+    "label": "Enables the Key Vault protection plan when selected in the portal example",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/67804f9851afd40c7f79eaad10e5df6738e75d44/bicep/infra/components/defender/main.bicep#L39-L45",
+    "uses": [
+      "l4-microsoft-defender-for-cloud-defender-for-key-vault"
+    ]
+  }
+]

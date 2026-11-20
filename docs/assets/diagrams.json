@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Gateway and agent landing zones",
+    "src": "assets/diagrams/gateway-and-agent-landing-zones.png",
+    "preview": "assets/diagrams/gateway-and-agent-landing-zones-preview.webp",
+    "alt": "The API Management hub publishes access contracts for Foundry workload spokes. Each landing zone can also be deployed independently.",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/architecture/media/AI-Landing-Zone.png",
+    "credit": "Microsoft Corporation · Azure AI Landing Zones · MIT",
+    "width": 1316,
+    "height": 739
+  },
+  {
+    "title": "API gateway and workload spoke",
+    "src": "assets/diagrams/api-gateway-and-workload-spoke.png",
+    "preview": "assets/diagrams/api-gateway-and-workload-spoke-preview.webp",
+    "alt": "An API Management gateway in the AI hub connects a workload spoke to model services.",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/architecture/media/AI-Landing-Zones-APIM.png",
+    "credit": "Microsoft Corporation · Azure AI Landing Zones · MIT",
+    "width": 6400,
+    "height": 5874
+  },
+  {
+    "title": "Operator access to private endpoints",
+    "src": "assets/diagrams/operator-private-access.png",
+    "preview": "assets/diagrams/operator-private-access-preview.webp",
+    "alt": "An operator connects to the agent network over a VPN and uses private DNS to reach its services.",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/media/runbooks/private-access-vpn.png",
+    "credit": "Microsoft Corporation · Azure AI Landing Zones · MIT",
+    "width": 4800,
+    "height": 3000
+  },
+  {
+    "title": "Document retrieval with Foundry IQ",
+    "src": "assets/diagrams/foundry-document-retrieval.png",
+    "preview": "assets/diagrams/foundry-document-retrieval-preview.webp",
+    "alt": "An agent calls Foundry Toolbox to retrieve material from a knowledge base in Azure AI Search.",
+    "source": "https://github.com/Azure/AI-Landing-Zones/blob/d9ff4b0592622592fd0708bacd9d1cee86c1f529/docs/media/runbooks/foundry-iq.png",
+    "credit": "Microsoft Corporation · Azure AI Landing Zones · MIT",
+    "width": 4800,
+    "height": 2700
+  }
+]

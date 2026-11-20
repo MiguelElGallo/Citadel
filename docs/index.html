@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#102328" />
+    <meta
+      name="description"
+      content="Plan a first Azure agent with the four-layer Citadel service catalog. Explore landing zones, hub and spoke connections, and Microsoft templates."
+    />
+    <title>Service explorer · Citadel Atlas</title>
+    <link rel="icon" href="./assets/citadel.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#workspace">Skip to explorer</a>
+    <header class="topbar">
+      <div class="shell top-inner">
+        <a class="brand" href="./"
+          ><img src="assets/citadel.svg" width="35" height="35" alt="" /><span
+            >Citadel <b>Atlas</b></span
+          ></a
+        >
+        <nav aria-label="Main navigation">
+          <a data-view="catalog" href="./" aria-current="page"
+            >Service explorer</a
+          ><a data-view="architecture" href="?view=architecture"
+            >Architecture</a
+          >
+        </nav>
+        <a
+          class="repo-link"
+          aria-label="GitHub repository"
+          href="https://github.com/MiguelElGallo/Citadel"
+          ><span data-icon="repo"></span><span>Repository</span></a
+        >
+      </div>
+    </header>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="shell hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Azure service explorer</h1>
+          <p>
+            Plan your first agent. Find the services behind each Citadel layer
+            and see how they connect.
+          </p>
+          <div class="metrics">
+            <span><strong>4</strong> layers</span
+            ><span><strong>64</strong> services &amp; tools</span
+            ><span><strong>134</strong> service uses</span>
+          </div>
+        </div>
+        <figure class="hero-diagram">
+          <svg
+            class="diagram-art"
+            viewBox="0 0 570 184"
+            role="img"
+            aria-labelledby="hero-diagram-title"
+          >
+            <title id="hero-diagram-title">
+              A Foundry agent in a spoke requests a model through API Management
+              in the hub. The gateway forwards the request to Azure OpenAI.
+            </title>
+            <defs>
+              <pattern
+                id="isogrid"
+                width="48"
+                height="28"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M0 0 48 28M48 0 0 28"
+                  stroke="#81cec3"
+                  stroke-opacity=".10"
+                  fill="none"
+                  stroke-width=".8"
+                />
+              </pattern>
+              <linearGradient id="tile" x2="0.9" y2="1">
+                <stop stop-color="currentColor" stop-opacity=".30" />
+                <stop offset="1" stop-color="currentColor" stop-opacity=".08" />
+              </linearGradient>
+              <g id="platform">
+                <path
+                  d="m-64 12 64-33 64 33-64 33z"
+                  fill="#10272b"
+                  stroke="currentColor"
+                  opacity=".48"
+                />
+                <path
+                  d="m-64 4 64-33 64 33v7L0 45l-64-34z"
+                  fill="#163236"
+                  stroke="currentColor"
+                  opacity=".87"
+                />
+                <path
+                  d="m-64 4 64-33 64 33-64 33z"
+                  fill="url(#tile)"
+                  stroke="currentColor"
+                />
+                <path
+                  d="m-48 4 48-25 48 25-48 25z"
+                  fill="none"
+                  stroke="currentColor"
+                  opacity=".36"
+                />
+                <path
+                  d="m-35 4 35-18 35 18-35 18z"
+                  fill="currentColor"
+                  opacity=".10"
+                />
+              </g>
+              <marker
+                id="flow-arrow"
+                markerWidth="7"
+                markerHeight="7"
+                refX="5"
+                refY="3"
+                orient="auto"
+              >
+                <path
+                  d="m0 0 5 3-5 3"
+                  fill="none"
+                  stroke="#9fe3d3"
+                  stroke-width="1.3"
+                />
+              </marker>
+            </defs>
+            <rect x="0" y="0" width="570" height="184" fill="url(#isogrid)" />
+            <g
+              fill="none"
+              stroke="#8ddbc8"
+              stroke-width="2"
+              marker-end="url(#flow-arrow)"
+            >
+              <path d="m143 89 31-16h42" />
+              <path d="m346 72 22-13h46" />
+            </g>
+            <g transform="translate(83 94)" color="#ad9afc">
+              <use href="#platform" />
+              <image
+                href="assets/icons/foundry-agent-service.svg"
+                x="-20"
+                y="-39"
+                width="40"
+                height="40"
+              />
+            </g>
+            <g transform="translate(283 76)" color="#63d8b6">
+              <use href="#platform" />
+              <image
+                href="assets/icons/api-management.svg"
+                x="-20"
+                y="-39"
+                width="40"
+                height="40"
+              />
+            </g>
+            <g transform="translate(482 60)" color="#84bcf5">
+              <use href="#platform" />
+              <image
+                href="assets/icons/azure-openai.svg"
+                x="-20"
+                y="-39"
+                width="40"
+                height="40"
+              />
+            </g>
+            <g
+              text-anchor="middle"
+              font-family="system-ui,sans-serif"
+              font-size="14"
+              font-weight="600"
+              fill="#f0f8f6"
+            >
+              <text x="83" y="157">Foundry agent</text>
+              <text x="283" y="139">API Management</text>
+              <text x="482" y="123">Azure OpenAI</text>
+            </g>
+            <g
+              text-anchor="middle"
+              font-family="system-ui,sans-serif"
+              font-size="12"
+            >
+              <text x="83" y="175" fill="#c1b4ff">Spoke</text>
+              <text x="283" y="157" fill="#85e5c6">Hub</text>
+              <text x="482" y="141" fill="#aacdf2">Model backend</text>
+            </g>
+          </svg>
+          <figcaption>
+            Example model request
+            <a
+              href="https://github.com/Azure-Samples/foundry-citadel-platform/blob/89d3d70b13aada1972d2e280e00e5aa49a85ad97/CITADEL-TECHNICAL-GUIDE.md#L25-L36"
+              >Blueprint source</a
+            >
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <main id="workspace" class="shell" tabindex="-1">
+      <noscript
+        ><p>
+          Enable JavaScript to filter this catalog, or
+          <a
+            href="https://github.com/MiguelElGallo/Citadel/raw/refs/heads/main/outputs/citadel-first-use-case/Citadel-Service-Map-HTML.zip"
+            >download the offline reading view</a
+          >.
+        </p></noscript
+      >
+      <p id="load-status" role="status">Loading the service catalog…</p>
+      <div id="catalog" hidden>
+        <section class="layer-section" aria-labelledby="layer-heading">
+          <div class="section-line">
+            <h2 id="layer-heading">Architecture layers</h2>
+            <button id="all-layers" class="text-button" type="button">
+              Show all layers
+            </button>
+          </div>
+          <div id="layers" class="layer-grid"></div>
+        </section>
+        <div class="work-grid">
+          <aside id="filters" class="filters" aria-labelledby="filter-title">
+            <div class="filter-title">
+              <h2 id="filter-title">
+                <span data-icon="sliders"></span>Filters
+              </h2>
+              <button class="text-button" id="clear" type="button">
+                Reset
+              </button>
+            </div>
+            <div id="filter-fields"></div>
+            <button id="apply-mobile" type="button" class="solid-button">
+              Show results
+            </button>
+          </aside>
+          <section class="results" aria-labelledby="results-title">
+            <div class="catalog-title">
+              <div>
+                <h2 id="results-title" tabindex="-1">Service catalog</h2>
+                <p id="count" aria-live="polite"></p>
+              </div>
+              <div class="catalog-actions">
+                <button
+                  id="pilot-start"
+                  type="button"
+                  class="soft-button"
+                  aria-pressed="false"
+                >
+                  Start here only</button
+                ><button
+                  id="mobile-filters"
+                  class="soft-button"
+                  aria-expanded="false"
+                  aria-controls="filters"
+                  type="button"
+                >
+                  <span data-icon="sliders"></span> Filters
+                </button>
+              </div>
+            </div>
+            <label class="search-box"
+              ><span data-icon="search"></span
+              ><span class="sr">Search service uses</span
+              ><input
+                id="search"
+                type="search"
+                placeholder="Search services, uses, or keywords"
+                autocomplete="off"
+            /></label>
+            <div id="active-filters" class="active-filters"></div>
+            <div
+              class="service-table"
+              role="table"
+              aria-label="Filtered service uses"
+            >
+              <div class="table-head" role="row">
+                <span role="columnheader">Service / use</span
+                ><span role="columnheader">Placement</span
+                ><span role="columnheader">Pilot stage</span>
+              </div>
+              <div id="rows" role="rowgroup"></div>
+            </div>
+            <div id="empty" class="empty" hidden>
+              <h3>No matching service uses</h3>
+              <p>Try another search or clear the filters.</p>
+              <button id="empty-reset" type="button" class="soft-button">
+                Clear filters
+              </button>
+            </div>
+            <div id="pagination" class="pagination"></div>
+          </section>
+        </div>
+      </div>
+      <section
+        id="architecture"
+        class="architecture"
+        hidden
+        aria-labelledby="arch-title"
+      >
+        <h2 id="arch-title">Architecture diagrams</h2>
+        <p class="intro">
+          Open a diagram to inspect the resources and their placement.
+        </p>
+        <div id="gallery" class="gallery"></div>
+        <div class="section-line connection-heading">
+          <h2>Documented connections</h2>
+        </div>
+        <p class="intro">
+          Follow a request, data transfer, or management action from its source
+          to its destination.
+        </p>
+        <label class="search-box"
+          ><span data-icon="search"></span
+          ><span class="sr">Find a connection</span
+          ><input
+            type="search"
+            id="connection-search"
+            placeholder="Search by endpoint or action"
+            autocomplete="off"
+        /></label>
+        <p id="edge-count" aria-live="polite"></p>
+        <div id="edges"></div>
+        <div id="edge-pages" class="pagination"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell">
+        <span class="footer-brand"
+          ><img src="assets/citadel.svg" width="21" height="21" alt="" />Citadel
+          Atlas</span
+        ><span>Independent guide to Microsoft’s Citadel blueprint.</span>
+        <nav aria-label="Resources">
+          <a
+            href="https://github.com/MiguelElGallo/Citadel/raw/refs/heads/main/outputs/citadel-first-use-case/Citadel-Service-Planner.xlsx"
+            >Excel planner</a
+          ><a
+            href="https://github.com/MiguelElGallo/Citadel/raw/refs/heads/main/outputs/citadel-first-use-case/Citadel-Service-Map-HTML.zip"
+            >Offline map</a
+          ><a href="credits.html">Credits &amp; licenses</a>
+        </nav>
+      </div>
+    </footer>
+    <dialog id="detail" class="drawer" aria-labelledby="detail-title">
+      <div class="dialog-bar">
+        <span>Service details</span
+        ><button
+          id="close-detail"
+          class="icon-button"
+          aria-label="Close service details"
+          type="button"
+        >
+          <span data-icon="close"></span>
+        </button>
+      </div>
+      <div id="detail-body"></div>
+    </dialog>
+    <dialog
+      id="image-dialog"
+      class="image-dialog"
+      aria-labelledby="image-title"
+    >
+      <div class="dialog-bar">
+        <h2 id="image-title"></h2>
+        <button
+          id="close-image"
+          class="icon-button"
+          aria-label="Close diagram"
+          type="button"
+        >
+          <span data-icon="close"></span>
+        </button>
+      </div>
+      <div id="image-content"></div>
+    </dialog>
+  </body>
+</html>
